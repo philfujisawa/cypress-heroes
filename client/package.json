@@ -10,8 +10,8 @@
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview --host",
-    "test:e2e:ci": "npx cypress run --record --group e2e --parallel",
-    "test:ct:ci": "npx cypress run --component --record --group ct --parallel"
+    "test:e2e:ci": "npx cypress run --group e2e --parallel",
+    "test:ct:ci": "npx cypress run --component --group ct --parallel"
   },
   "dependencies": {
     "@tanstack/react-query": "^4.22.0",
