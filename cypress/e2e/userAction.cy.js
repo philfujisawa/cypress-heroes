@@ -8,7 +8,7 @@ const chance = new Chance()
 const loginPage = new LoginPage()
 const heroesPage = new HeroesPage()
 
-describe('Login Spec', () => {
+describe('User Action Spec', () => {
   
   it('Like - Admin', () => {
     loginPage.accessLoginPage()
