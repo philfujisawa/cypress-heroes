@@ -1,53 +1,61 @@
 # Cypress Heroes Demo Application
 
-This is a demo application that shows how to use Cypress to run end-to-end,
-component, and API tests against an application.
+![projeto1](assets/cypress-heroes.png)
+_Welcome to Cypress Heroes App. This project showcases my proficiency in Quality Assurance (QA) and test automation using Cypress. The application serves as a comprehensive demonstration of my ability to develop, test, and maintain robust web applications._
+
+**Para README em Português acessar no repositório o documento README-PTBR.md**
+
+## Project Overview
+
+The Cypress Heroes Demo Application is a full-stack project comprising a React frontend [Vite](https://vitejs.dev/) and a NestJS backend [NestJS](https://nestjs.com/). It is designed to emulate a real-world scenario where users can register, log in, and perform various actions. This setup provides a solid foundation for implementing and demonstrating end-to-end testing strategies.
 
 ## Getting Started
 
-The app is a mono repo that uses npm workspaces. Once you clone the project,
-install the dependencies at the root folder:
+To set up the project locally, follow these steps:
 
-```sh
+### 1. Clone the repository:
+
+```bash
+git clone https://github.com/philfujisawa/cypress-heroes.git
+cd cypress-heroes
+```
+
+### 2. Install dependencies:
+
+```bash
 npm install
 ```
 
-After that a few more things need to be set up (databases and such), to do so run:
+### 3. Set up the environment:
 
-```sh
+```bash
 npm run setup
 ```
 
+### 4. Start the development server:
 
-To launch the app for development, run:
-
-```sh
+```bash
 npm run dev
 ```
 
-This will start both the client and server apps in dev mode. The site will be
-available at http://localhost:3000.
++ The application will be accessible at http://localhost:3000.
 
-## App Overview
+## Running Tests
+This project includes a suite of automated tests to ensure the application's functionality and reliability.
 
-The Cypress Heroes app consists of a frontend client app written in React that
-uses Vite, as well as a backend app that uses NestJS.
++ **End-to-End Tests**: Validate user flows and interactions.
 
-### React Client App
+**Please open another terminal and inside main cypress-heroes directory, enter inside folder named `client` and execute the tests.**
 
-The React client app is located in the **client** folder. It is a standard React [Vite](https://vitejs.dev/) app.
-
-Todo: fill out
-
-### NestJS Server App
-
-The server app is in the **server** folder. It is built with the [NestJS](https://nestjs.com/) Node.js framework. It uses [Prisma](https://www.prisma.io/) for the database ORM.
+```bash
+npx cypress open
+```
 
 #### Database seeding and resetting
 
 The database is seeded from the **server/prisma/seed.ts** script when you set up the app. If at any time you want to reset the database back to its initial state, run:
 
-```sh
+```bash
 npm run resetdb
 ```
 
@@ -56,3 +64,5 @@ npm run resetdb
 The client app uses an environment variable to know what the URL is for the
 backend api named `VITE_API_URL`. It defaults to "http://localhost:3001" for use
 in dev mode, and should be overriden in other environments/modes.
+
+Thank you so much!
