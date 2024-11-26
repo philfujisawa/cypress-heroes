@@ -13,16 +13,13 @@
     "resetdb": "npm --prefix ./server run prisma:resetdb",
     "dev": "concurrently \"npm --prefix ./client run dev\" \"npm --prefix ./server run start:dev\"",
     "start:ci": "concurrently \"npm --prefix ./client run preview\" \"npm --prefix ./server run start:ci\"",
-    "test:e2e:ci": "npm --prefix ./client run test:e2e:ci"
-  },
-    "dev": "vite",
-    "clean": "rimraf dist",
-    "prebuild": "npm run clean && npm run lint",
-    "build": "tsc && vite build",
+    "test:e2e:ci": "npm --prefix ./client run test:e2e:ci",
+    "client:dev": "vite --host",
+    "client:clean": "rimraf client/dist",
+    "client:prebuild": "npm run client:clean && npm run lint",
+    "client:build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview --host",
-    "test:e2e:ci": "npx cypress run --spec 'cypress/e2e/**/*'"
->>>>>>> 3bf5f5419634a79b611156b1a085329b08da9409
+    "client:preview": "vite preview --host"
   },
   "repository": {
     "type": "git",
