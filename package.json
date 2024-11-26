@@ -14,11 +14,6 @@
     "dev": "concurrently \"npm --prefix ./client run dev\" \"npm --prefix ./server run start:dev\"",
     "start:ci": "concurrently \"npm --prefix ./client run preview\" \"npm --prefix ./server run start:ci\"",
     "test:e2e:ci": "npm --prefix ./client run test:e2e:ci"
-<<<<<<< HEAD
-  
-=======
-    
->>>>>>> 3bf5f5419634a79b611156b1a085329b08da9409
   },
   "repository": {
     "type": "git",
