@@ -3,17 +3,28 @@ on:
   push:
 env:
   VITE_API_URL: http://localhost:3001
+
 jobs:
   install:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Cypress install
-        uses: cypress-io/github-action@v6
-        with:
-          runTests: false
-          build: npm run build
+
+      # Install dependencies
+      - name: Install dependencies
+        run: |
+          npm install
+          npm install --prefix client
+          npm install --prefix server
+
+      # Build the project
+      - name: Build project
+        run: |
+          npm run build --prefix client
+          npm run build --prefix server
+
+      # Save build artifacts
       - name: Save build folder
         uses: actions/upload-artifact@v4
         with:
@@ -22,6 +33,7 @@ jobs:
           path: |
             client/dist
             server/dist
+
   end-to-end-tests:
     runs-on: ubuntu-latest
     needs: install
@@ -30,10 +42,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      # Download build artifacts
       - name: Download the build folders
         uses: actions/download-artifact@v4
         with:
           name: build-folders
+
+      # Start services and run tests
       - name: Run E2E Tests
         uses: cypress-io/github-action@v6
         with:
